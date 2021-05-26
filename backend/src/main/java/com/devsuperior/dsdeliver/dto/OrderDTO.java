@@ -21,15 +21,19 @@ public class OrderDTO implements Serializable {
 
 	private List<ProductDTO> products = new ArrayList<>();
 
+	public OrderDTO() {
+
+	}
+
 	public OrderDTO(Long id, String address, Double longitude, Double latitude, Instant moment, OrderStatus status) {
-		super();
+
 		this.id = id;
 		this.address = address;
-		this.longitude = longitude;
 		this.latitude = latitude;
+		this.longitude = longitude;
 		this.moment = moment;
 		this.status = status;
-
+		
 	}
 
 	public OrderDTO(Order entity) {
@@ -93,6 +97,14 @@ public class OrderDTO implements Serializable {
 
 	public List<ProductDTO> getProducts() {
 		return products;
+	}
+
+	public void setProducts(List<ProductDTO> products) {
+		this.products = products;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 }
